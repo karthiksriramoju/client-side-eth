@@ -7,13 +7,13 @@ import {abi} from './abi.ts'
 const client = new QueryClient();
 
 function App() {
-
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={client}>
         <ConnectWallet />
         <TotalSupply />
         <USDTbalance/>
+        <Account/>
      </QueryClientProvider>
     </WagmiProvider>
   )
@@ -69,6 +69,16 @@ function USDTbalance(){
     Usdc Balance of x is {data?.toString()}   
   </div>
 
+}
+
+function Account(){
+  const {address} = useAccount();
+  if (address){
+    return <div>You are connected</div>
+  }
+  else{
+    return <div>You are not connected</div>
+  }
 }
 
 export default App
