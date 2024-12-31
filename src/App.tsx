@@ -13,6 +13,7 @@ function App() {
       <QueryClientProvider client={client}>
         <ConnectWallet />
         <TotalSupply />
+        <USDTbalance/>
      </QueryClientProvider>
     </WagmiProvider>
   )
@@ -51,6 +52,21 @@ function TotalSupply(){
 
   return <div>
     Total supply of Usdc is {data?.toString()}   
+  </div>
+
+}
+
+function USDTbalance(){
+
+  const {data} = useReadContract({
+    address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+    abi,
+    functionName : 'balanceOf',
+    args:['0xB102654F07e3d2198dF22E9808cc21eD1A6B3EfD']
+  })
+
+  return <div>
+    Usdc Balance of x is {data?.toString()}   
   </div>
 
 }
