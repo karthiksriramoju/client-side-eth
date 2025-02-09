@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# Client-Side Ethereum Learning 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is dedicated to learning and implementing Ethereum-related functionality on the client side using React. It includes working with the **wagmi** library, interacting with smart contracts, and handling blockchain events.
 
-Currently, two official plugins are available:
+## Features
+- **Ethereum Wallet Integration**: Connect wallets like MetaMask using `wagmi`.
+- **Smart Contract Interaction**: Read and write data to smart contracts from the frontend.
+- **Event Listening**: Index blockchain events and handle emitted events efficiently.
+- **React-based UI**: Modern frontend built using React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React** – Frontend framework
+- **wagmi** – React hooks for Ethereum
+- **Vite** – Build tool for fast development
 
-## Expanding the ESLint configuration
+## Getting Started
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- [MetaMask](https://metamask.io/) or another Ethereum wallet
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/karthiksriramoju/client-side-eth.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd client-side-eth
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+## Usage
+- **Connect Wallet**: Click on the "Connect Wallet" button to link MetaMask.
+- **Interact with Smart Contracts**: Use the UI to read/write data from Ethereum smart contracts.
+- **Catch Emitted Events**: Listen for and display blockchain events in real-time.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+This project is licensed under the MIT License.
